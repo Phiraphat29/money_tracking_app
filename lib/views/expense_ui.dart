@@ -105,7 +105,6 @@ class _ExpenseUIState extends State<ExpenseUI> {
                   color: Color(primaryColor),
                 ),
               ),
-              // Add your income page widgets here
               SizedBox(height: 20),
               Container(
                 margin: EdgeInsets.symmetric(horizontal: 8),

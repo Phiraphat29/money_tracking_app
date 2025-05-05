@@ -22,7 +22,6 @@ class MoneyApi {
         data: formdata,
         options: Options(headers: {'Content-Type': 'multipart/form-data'}),
       );
-      // หลังจากทำงานเสร็จ ณ ที่นี้ตรวจสอบผลการทำงานจาก responseData
       if (responseData.statusCode == 200) {
         return true;
       } else {

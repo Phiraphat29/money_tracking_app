@@ -49,7 +49,6 @@ class _LoginUIState extends State<LoginUI> {
         },
         child: Column(
           children: [
-            // Custom curved app bar
             Container(
               height: 150,
               decoration: BoxDecoration(

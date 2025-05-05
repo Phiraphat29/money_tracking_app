@@ -15,7 +15,7 @@ class Money {
     this.userID,
   });
 
-  Money.fromJson(Map<dynamic, dynamic> json) {
+  Money.fromJson(Map<String, dynamic> json) {
     moneyID = json['moneyID'];
     moneyDetail = json['moneyDetail'];
     moneyDate = json['moneyDate'];
@@ -25,7 +25,7 @@ class Money {
   }
 
   Map<dynamic, dynamic> toJson() {
-    final Map<dynamic, dynamic> data = new Map<dynamic, dynamic>();
+    final Map<String, dynamic> data = new Map<String, dynamic>();
     data['moneyID'] = this.moneyID;
     data['moneyDetail'] = this.moneyDetail;
     data['moneyDate'] = this.moneyDate;

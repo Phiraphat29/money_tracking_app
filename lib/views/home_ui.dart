@@ -17,16 +17,6 @@ class HomeUI extends StatefulWidget {
 }
 
 class _HomeUIState extends State<HomeUI> {
-  // textformfield income controller
-  TextEditingController moneyIncomeDetailController = TextEditingController();
-  TextEditingController moneyIncomeValueController = TextEditingController();
-  TextEditingController moneyIncomeDateController = TextEditingController();
-
-  // textformfield expense controller
-  TextEditingController moneyExpenseDetailController = TextEditingController();
-  TextEditingController moneyExpenseValueController = TextEditingController();
-  TextEditingController moneyExpenseDateController = TextEditingController();
-
   // bottombar controller
   final bottombarController = PageController(initialPage: 1);
 
@@ -139,13 +129,13 @@ class _HomeUIState extends State<HomeUI> {
                     color: Color(primaryPaleColor),
                     borderRadius: BorderRadius.all(Radius.circular(30)),
                     border: Border.all(
-                      color: Color(primaryAccentColor),
+                      color: Color(primaryPaleColor),
                       width: 2,
                     ),
                     boxShadow: [
                       BoxShadow(
-                        blurRadius: 10,
-                        spreadRadius: 2,
+                        blurRadius: 5,
+                        spreadRadius: 5,
                         color: Color(primaryPaleColor),
                       ),
                     ],
@@ -208,13 +198,21 @@ class _HomeUIState extends State<HomeUI> {
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text(
-                                      '⬇ยอดเงินเข้ารวม',
-                                      textAlign: TextAlign.left,
-                                      style: TextStyle(
-                                        color: Color(secondaryColor),
-                                        fontSize: 16,
-                                      ),
+                                    Row(
+                                      children: [
+                                        Icon(
+                                          Icons.arrow_downward,
+                                          color: Color(successColor),
+                                        ),
+                                        Text(
+                                          'ยอดเงินเข้ารวม',
+                                          textAlign: TextAlign.left,
+                                          style: TextStyle(
+                                            color: Color(secondaryColor),
+                                            fontSize: 16,
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                     Text(
                                       totalIncome.toStringAsFixed(2),
@@ -237,13 +235,21 @@ class _HomeUIState extends State<HomeUI> {
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.end,
                                   children: [
-                                    Text(
-                                      'ยอดเงินออกรวม⬆',
-                                      textAlign: TextAlign.right,
-                                      style: TextStyle(
-                                        color: Color(secondaryColor),
-                                        fontSize: 16,
-                                      ),
+                                    Row(
+                                      children: [
+                                        Text(
+                                          'ยอดเงินออกรวม',
+                                          textAlign: TextAlign.right,
+                                          style: TextStyle(
+                                            color: Color(secondaryColor),
+                                            fontSize: 16,
+                                          ),
+                                        ),
+                                        Icon(
+                                          Icons.arrow_upward,
+                                          color: Color(primaryAccentColor),
+                                        ),
+                                      ],
                                     ),
                                     Text(
                                       totalExpense.toStringAsFixed(2),

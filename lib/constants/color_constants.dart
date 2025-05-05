@@ -7,7 +7,7 @@ const primaryColor = 0xFFDC143C;
 const primaryAccentColor = 0xFFD82543;
 
 // primaryPaleColor = Pale Red
-const primaryPaleColor = 0xCBB11E1E;
+const primaryPaleColor = 0xCB691717;
 
 // secondaryColor = Gold
 const secondaryColor = 0xFFFFD700;

@@ -51,10 +51,6 @@ class _SplashScreenUIState extends State<SplashScreenUI> {
                   ),
                 ),
                 SizedBox(height: getMediaQueryHeight(context) * 0.03),
-                CircularProgressIndicator(
-                  color: Color(secondaryColor),
-                  strokeWidth: 5,
-                ),
               ],
             ),
           ),
