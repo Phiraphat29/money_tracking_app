@@ -2,7 +2,7 @@
 
 MINI project Powered by Flutter.
 
-![image](https://github.com/user-attachments/assets/06f610d9-f943-4fce-8086-320127a02801)
+![image width="128"](https://github.com/user-attachments/assets/06f610d9-f943-4fce-8086-320127a02801)
 ![image](https://github.com/user-attachments/assets/52d2e7d8-2b0b-4eaf-aa82-2c9055fec929)
 ![image](https://github.com/user-attachments/assets/456de32c-9282-4d42-9f96-38ea5097c9ff)
 ![image](https://github.com/user-attachments/assets/672fa8b2-8eb7-4a71-a01f-d315d1c0329c)
