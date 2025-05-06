@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:money_tracking_app/constants/baseurl.dart';
 import 'package:money_tracking_app/constants/color_constants.dart';
+import 'package:money_tracking_app/extensions/num_extension.dart';
 import 'package:money_tracking_app/models/user.dart';
 import 'package:money_tracking_app/services/money_api.dart';
 import 'package:money_tracking_app/views/dashboard_ui.dart';
@@ -44,11 +45,10 @@ class _HomeUIState extends State<HomeUI> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: index,
         backgroundColor: Color(primaryColor),
-        selectedItemColor: Color(secondaryColor),
+        selectedItemColor: Color(prominentColor),
         showUnselectedLabels: false,
         onTap: (value) {
           setState(() {
@@ -77,7 +77,7 @@ class _HomeUIState extends State<HomeUI> {
             children: [
               // Custom curved app bar
               Container(
-                height: 180,
+                height: 250,
                 decoration: BoxDecoration(
                   color: Color(primaryColor),
                   borderRadius: BorderRadius.vertical(
@@ -91,11 +91,11 @@ class _HomeUIState extends State<HomeUI> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(left: 40),
+                      padding: const EdgeInsets.only(left: 20, bottom: 80),
                       child: Text(
                         widget.user.userFullName!,
                         style: TextStyle(
-                          color: Color(secondaryColor),
+                          color: Color(prominentColor),
                           fontSize: 22,
                           fontWeight: FontWeight.bold,
                         ),
@@ -103,7 +103,7 @@ class _HomeUIState extends State<HomeUI> {
                     ),
                     widget.user.userImage != ""
                         ? Padding(
-                          padding: const EdgeInsets.only(right: 40),
+                          padding: const EdgeInsets.only(right: 20, bottom: 80),
                           child: ClipOval(
                             child: Image.network(
                               '$baseUrl/images/users/${widget.user.userImage!}',
@@ -114,8 +114,12 @@ class _HomeUIState extends State<HomeUI> {
                           ),
                         )
                         : Padding(
-                          padding: const EdgeInsets.only(right: 40),
-                          child: Icon(Icons.account_circle_rounded, size: 100),
+                          padding: const EdgeInsets.only(right: 20, bottom: 80),
+                          child: Icon(
+                            Icons.account_circle_rounded,
+                            size: 100,
+                            color: Color(prominentColor),
+                          ),
                         ),
                   ],
                 ),
@@ -126,19 +130,9 @@ class _HomeUIState extends State<HomeUI> {
                 child: Container(
                   height: 200,
                   decoration: BoxDecoration(
-                    color: Color(primaryPaleColor),
+                    color: Color(boxColor),
                     borderRadius: BorderRadius.all(Radius.circular(30)),
-                    border: Border.all(
-                      color: Color(primaryPaleColor),
-                      width: 2,
-                    ),
-                    boxShadow: [
-                      BoxShadow(
-                        blurRadius: 5,
-                        spreadRadius: 5,
-                        color: Color(primaryPaleColor),
-                      ),
-                    ],
+                    border: Border.all(color: Color(boxColor), width: 2),
                   ),
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -168,22 +162,29 @@ class _HomeUIState extends State<HomeUI> {
                               'ยอดเงินคงเหลือ',
                               textAlign: TextAlign.center,
                               style: TextStyle(
-                                color: Color(secondaryColor),
+                                color: Color(prominentColor),
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
+                                shadows: [
+                                  Shadow(
+                                    blurRadius: 2,
+                                    color: Color(primaryColor),
+                                    offset: Offset(0, 2),
+                                  ),
+                                ],
                               ),
                             ),
                             Text(
-                              '${totalBalance.toStringAsFixed(2)} บาท',
+                              '${totalBalance.withComma} บาท',
                               textAlign: TextAlign.center,
                               style: TextStyle(
-                                color: Color(secondaryColor),
+                                color: Color(prominentColor),
                                 fontSize: 32,
                                 fontWeight: FontWeight.bold,
                                 shadows: [
                                   Shadow(
-                                    blurRadius: 10,
-                                    color: Color(primaryAccentColor),
+                                    blurRadius: 2,
+                                    color: Color(primaryColor),
                                     offset: Offset(0, 2),
                                   ),
                                 ],
@@ -201,30 +202,37 @@ class _HomeUIState extends State<HomeUI> {
                                     Row(
                                       children: [
                                         Icon(
-                                          Icons.arrow_downward,
-                                          color: Color(successColor),
+                                          Icons.arrow_circle_down_outlined,
+                                          color: Color(positiveColor),
                                         ),
                                         Text(
                                           'ยอดเงินเข้ารวม',
                                           textAlign: TextAlign.left,
                                           style: TextStyle(
-                                            color: Color(secondaryColor),
-                                            fontSize: 16,
+                                            color: Color(prominentColor),
+                                            fontSize: 18,
+                                            shadows: [
+                                              Shadow(
+                                                blurRadius: 2,
+                                                color: Color(primaryColor),
+                                                offset: Offset(0, 2),
+                                              ),
+                                            ],
                                           ),
                                         ),
                                       ],
                                     ),
                                     Text(
-                                      totalIncome.toStringAsFixed(2),
+                                      totalIncome.withComma,
                                       textAlign: TextAlign.left,
                                       style: TextStyle(
-                                        color: Color(secondaryColor),
+                                        color: Color(prominentColor),
                                         fontSize: 24,
                                         fontWeight: FontWeight.bold,
                                         shadows: [
                                           Shadow(
-                                            blurRadius: 10,
-                                            color: Color(primaryAccentColor),
+                                            blurRadius: 2,
+                                            color: Color(primaryColor),
                                             offset: Offset(0, 2),
                                           ),
                                         ],
@@ -241,27 +249,34 @@ class _HomeUIState extends State<HomeUI> {
                                           'ยอดเงินออกรวม',
                                           textAlign: TextAlign.right,
                                           style: TextStyle(
-                                            color: Color(secondaryColor),
-                                            fontSize: 16,
+                                            color: Color(prominentColor),
+                                            fontSize: 18,
+                                            shadows: [
+                                              Shadow(
+                                                blurRadius: 2,
+                                                color: Color(primaryColor),
+                                                offset: Offset(0, 2),
+                                              ),
+                                            ],
                                           ),
                                         ),
                                         Icon(
-                                          Icons.arrow_upward,
-                                          color: Color(primaryAccentColor),
+                                          Icons.arrow_circle_up_outlined,
+                                          color: Color(negativeColor),
                                         ),
                                       ],
                                     ),
                                     Text(
-                                      totalExpense.toStringAsFixed(2),
+                                      totalExpense.withComma,
                                       textAlign: TextAlign.right,
                                       style: TextStyle(
-                                        color: Color(secondaryColor),
+                                        color: Color(prominentColor),
                                         fontSize: 24,
                                         fontWeight: FontWeight.bold,
                                         shadows: [
                                           Shadow(
-                                            blurRadius: 10,
-                                            color: Color(primaryAccentColor),
+                                            blurRadius: 2,
+                                            color: Color(primaryColor),
                                             offset: Offset(0, 2),
                                           ),
                                         ],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:money_tracking_app/constants/color_constants.dart';
+import 'package:money_tracking_app/extensions/num_extension.dart';
 import 'package:money_tracking_app/models/money.dart';
 import 'package:money_tracking_app/models/user.dart';
 import 'package:money_tracking_app/services/money_api.dart';
@@ -16,6 +17,7 @@ class _DashboardUIState extends State<DashboardUI> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(backgroundColor),
       body: Column(
         children: [
           SizedBox(height: 20),
@@ -56,7 +58,7 @@ class _DashboardUIState extends State<DashboardUI> {
                       return Card(
                         elevation: 2,
                         margin: EdgeInsets.only(bottom: 12),
-                        color: Colors.white,
+                        color: Color(backgroundColor),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(12),
                           side: BorderSide(
@@ -72,8 +74,8 @@ class _DashboardUIState extends State<DashboardUI> {
                           leading: CircleAvatar(
                             backgroundColor:
                                 isIncome
-                                    ? Color(successColor)
-                                    : Color(primaryAccentColor),
+                                    ? Color(positiveColor)
+                                    : Color(negativeColor),
                             child: Icon(
                               isIncome
                                   ? Icons.arrow_downward
@@ -90,9 +92,12 @@ class _DashboardUIState extends State<DashboardUI> {
                           ),
                           subtitle: Text(transaction.moneyDate ?? ''),
                           trailing: Text(
-                            '${isIncome ? "+" : "-"}${transaction.moneyInOut?.toStringAsFixed(2)} บาท',
+                            '${isIncome ? "+" : "-"}${transaction.moneyInOut?.withComma} บาท',
                             style: TextStyle(
-                              color: isIncome ? Colors.green : Colors.red,
+                              color:
+                                  isIncome
+                                      ? Color(positiveColor)
+                                      : Color(negativeColor),
                               fontWeight: FontWeight.bold,
                               fontSize: 16,
                             ),

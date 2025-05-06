@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:money_tracking_app/constants/color_constants.dart';
-import 'package:money_tracking_app/constants/mediaquery.dart';
 import 'package:money_tracking_app/views/welcome_ui.dart';
 
 class SplashScreenUI extends StatefulWidget {
@@ -36,31 +35,31 @@ class _SplashScreenUIState extends State<SplashScreenUI> {
                 Text(
                   "Money Tracking",
                   style: TextStyle(
-                    color: Colors.white,
+                    color: Color(prominentColor),
                     fontSize: 30,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(height: getMediaQueryHeight(context) * 0.03),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.03),
                 Text(
                   "รายรับรายจ่ายของฉัน",
                   style: TextStyle(
-                    color: Colors.white,
+                    color: Color(prominentColor),
                     fontSize: 22,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(height: getMediaQueryHeight(context) * 0.03),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.03),
               ],
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(bottom: 20.0),
+            padding: const EdgeInsets.only(bottom: 40.0),
             child: Text(
               'Created by 6652410029\nDTI-SAU',
               textAlign: TextAlign.center,
               style: TextStyle(
-                color: Color(secondaryColor),
+                color: Colors.yellow,
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),

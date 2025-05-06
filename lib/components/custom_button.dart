@@ -19,7 +19,7 @@ class CustomButton extends StatelessWidget {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         backgroundColor: color ?? Color(primaryColor),
-        foregroundColor: Color(secondaryColor),
+        foregroundColor: Color(prominentColor),
         minimumSize: Size.fromHeight(50),
         shadowColor: Color(primaryColor),
         elevation: 10,

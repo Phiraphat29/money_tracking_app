@@ -28,7 +28,7 @@ class _LoginUIState extends State<LoginUI> {
           style: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.bold,
-            color: Color(secondaryColor),
+            color: Color(prominentColor),
           ),
         ),
         backgroundColor: color,
@@ -66,7 +66,7 @@ class _LoginUIState extends State<LoginUI> {
                       IconButton(
                         icon: Icon(
                           Icons.arrow_back_ios_new_outlined,
-                          color: Color(secondaryColor),
+                          color: Color(prominentColor),
                           size: 32,
                         ),
                         onPressed: () => Navigator.pop(context),
@@ -76,7 +76,7 @@ class _LoginUIState extends State<LoginUI> {
                           child: Text(
                             'เข้าใช้งาน Money Tracking',
                             style: TextStyle(
-                              color: Color(secondaryColor),
+                              color: Color(prominentColor),
                               fontSize: 22,
                               fontWeight: FontWeight.bold,
                             ),
@@ -115,9 +115,9 @@ class _LoginUIState extends State<LoginUI> {
                       onPressed: () async {
                         // validate
                         if (userNameController.text.trim().isEmpty) {
-                          showSnackbar('กรอกชื่อ', Color(errorColor));
+                          showSnackbar('กรอกชื่อ', Color(negativeColor));
                         } else if (userPasswordController.text.trim().isEmpty) {
-                          showSnackbar('กรอกรหัสผ่าน', Color(errorColor));
+                          showSnackbar('กรอกรหัสผ่าน', Color(negativeColor));
                         } else {
                           // if validating fine
                           // create User
@@ -138,7 +138,7 @@ class _LoginUIState extends State<LoginUI> {
                           } else {
                             showSnackbar(
                               'ขื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง',
-                              Color(errorColor),
+                              Color(negativeColor),
                             );
                           }
                         }

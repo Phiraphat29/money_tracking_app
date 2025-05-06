@@ -114,8 +114,8 @@ class _CustomTextformfieldState extends State<CustomTextformfield> {
                     _obscureText ? Icons.visibility_off : Icons.visibility,
                     color:
                         _obscureText
-                            ? Color(primaryColor)
-                            : Color(successColor),
+                            ? Color(negativeColor)
+                            : Color(positiveColor),
                   ),
                   onPressed: () {
                     setState(() {

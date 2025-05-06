@@ -49,7 +49,7 @@ class _RegisterUIState extends State<RegisterUI> {
             ),
           ),
           content: Text(message),
-          backgroundColor: Colors.white,
+          backgroundColor: Color(backgroundColor),
           actions: [
             TextButton(
               onPressed: () {
@@ -74,11 +74,11 @@ class _RegisterUIState extends State<RegisterUI> {
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 30,
-              color: Color(successColor),
+              color: Color(positiveColor),
             ),
           ),
           content: Text(message),
-          backgroundColor: Colors.white,
+          backgroundColor: Color(backgroundColor),
           actions: [
             TextButton(
               onPressed: () {
@@ -102,7 +102,7 @@ class _RegisterUIState extends State<RegisterUI> {
           style: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.bold,
-            color: Color(secondaryColor),
+            color: Color(prominentColor),
           ),
         ),
         backgroundColor: color,
@@ -121,7 +121,7 @@ class _RegisterUIState extends State<RegisterUI> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Color(backgroundColor),
       body: GestureDetector(
         onTap: () {
           FocusScope.of(context).unfocus();
@@ -146,7 +146,7 @@ class _RegisterUIState extends State<RegisterUI> {
                       IconButton(
                         icon: Icon(
                           Icons.arrow_back_ios_new_outlined,
-                          color: Color(secondaryColor),
+                          color: Color(prominentColor),
                           size: 32,
                         ),
                         onPressed: () => Navigator.pop(context),
@@ -156,7 +156,7 @@ class _RegisterUIState extends State<RegisterUI> {
                           child: Text(
                             'สมัครสมาชิก',
                             style: TextStyle(
-                              color: Color(secondaryColor),
+                              color: Color(prominentColor),
                               fontSize: 22,
                               fontWeight: FontWeight.bold,
                             ),
@@ -278,7 +278,7 @@ class _RegisterUIState extends State<RegisterUI> {
                             if (await UserApi().registerUser(user, userFile)) {
                               showSnackbar(
                                 'ลงทะเบียนสำเร็จ',
-                                Color(successColor),
+                                Color(positiveColor),
                               );
                               Navigator.pushReplacement(
                                 context,

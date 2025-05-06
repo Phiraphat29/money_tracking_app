@@ -15,15 +15,19 @@ class _WelcomeUIState extends State<WelcomeUI> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Color(backgroundColor),
       body: Stack(
         children: [
           // Top image that won't affect other content
           Positioned(
-            top: 0,
+            top: 80,
             left: 0,
             right: 0,
-            child: Image.asset('assets/images/welcomelogo.png', width: 350),
+            child: Image.asset(
+              'assets/images/welcomelogo.png',
+              width: 340,
+              height: 340,
+            ),
           ),
           // Your existing content
           Column(
@@ -81,7 +85,7 @@ class _WelcomeUIState extends State<WelcomeUI> {
                           ),
                         ],
                       ),
-                      SizedBox(height: 20),
+                      SizedBox(height: 60),
                     ],
                   ),
                 ),

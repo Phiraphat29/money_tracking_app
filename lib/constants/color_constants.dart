@@ -1,25 +1,25 @@
 //color_constants.dart
 
-// primaryColor = Crimson Red
-const primaryColor = 0xFFDC143C;
+// primaryColor = Main Theme
+const primaryColor = 0xFF355EE6;
 
-// primaryAccentColor = Saturated Red
-const primaryAccentColor = 0xFFD82543;
+// primaryAccentColor = Saturated Primary
+const primaryAccentColor = 0xFFA2B0DD;
 
-// primaryPaleColor = Pale Red
-const primaryPaleColor = 0xCB691717;
+// backgroundColor = Background Color
+const backgroundColor = 0xFFFFFFFF;
 
-// secondaryColor = Gold
-const secondaryColor = 0xFFFFD700;
+// boxColor = Color of Box (Container)
+const boxColor = 0xFF1B318F;
 
-// stokeColor = black
-const strokeColor = 0xFF000000;
+// prominentColor = Text & Icon
+const prominentColor = 0xFFB7EEEB;
 
 // overlayColor = Grey 80%
 const overlayColor = 0xFF858282;
 
 // successColor = Green
-const successColor = 0xFF4CAF50;
+const positiveColor = 0xFF4CAF50;
 
 // errorColor = Black Red
-const errorColor = 0xFFB00020;
+const negativeColor = 0xFFC71838;

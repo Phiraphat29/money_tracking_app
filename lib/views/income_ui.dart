@@ -40,7 +40,7 @@ class _IncomeUIState extends State<IncomeUI> {
             ),
           ),
           content: Text(message),
-          backgroundColor: Colors.white,
+          backgroundColor: Color(backgroundColor),
           actions: [
             TextButton(
               onPressed: () {
@@ -65,11 +65,11 @@ class _IncomeUIState extends State<IncomeUI> {
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 30,
-              color: Color(successColor),
+              color: Color(positiveColor),
             ),
           ),
           content: Text(message),
-          backgroundColor: Colors.white,
+          backgroundColor: Color(backgroundColor),
           actions: [
             TextButton(
               onPressed: () {
@@ -91,6 +91,7 @@ class _IncomeUIState extends State<IncomeUI> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(backgroundColor),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
